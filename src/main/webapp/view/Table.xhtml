@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Table Test</title>
+</h:head>
+<h:body>
+    <p:panel header="Test header">
+        <h:form>
+            <h:panelGrid columns="3" cellpadding="2">
+                <h:outputLabel for="#{tableView.value}" value="Name"/>
+                <h:inputText value="#{tableView.value}" label="Name"/>
+                <h:commandButton type="submit" value="Search" action="#{tableView.search}"/>
+            </h:panelGrid>
+        </h:form>
+    </p:panel>
+    <p:dataTable var="listData" value="#{tableView.list}">
+        <p:column headerText="data">
+            <h:outputText value="#{listData}"/>
+        </p:column>
+    </p:dataTable>
+</h:body>
+</html>
