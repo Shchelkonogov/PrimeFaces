@@ -13,13 +13,15 @@ import java.util.List;
 @Stateless
 public class BeanTable {
 
+    private static final String SQL = "select * from obj_type where obj_type_id = ?";
+
     @Resource(mappedName = "jdbc/OracleDataSource")
     private DataSource ds;
 
     public List<String> loadData(int id) {
         List<String> result = new ArrayList<>();
         try(Connection connect = ds.getConnection();
-            PreparedStatement pstm = connect.prepareStatement("select * from obj_type where obj_type_id = ?")) {
+            PreparedStatement pstm = connect.prepareStatement(SQL)) {
             pstm.setInt(1, id);
             ResultSet res = pstm.executeQuery();
             while(res.next()) {

@@ -37,8 +37,7 @@ public class TableView implements Serializable {
         this.list = list;
     }
 
-    public String search() {
+    public void search() {
         list = bean.loadData(value);
-        return null;
     }
 }
