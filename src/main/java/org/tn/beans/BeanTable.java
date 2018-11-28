@@ -10,6 +10,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Stateless бин для поиска значений в таблице obj_type
+ */
 @Stateless
 public class BeanTable {
 

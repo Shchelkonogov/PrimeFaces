@@ -8,6 +8,9 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Контроллер для обработки jsf
+ */
 @Named(value = "tableView")
 @ViewScoped
 public class TableView implements Serializable {
